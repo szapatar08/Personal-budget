@@ -1,4 +1,6 @@
 import csv
+import uuid
+
 class val:
     def not_empthy(_list):
         if not _list:
@@ -14,7 +16,8 @@ class val:
     
 class expences:
     def add_expence(_list, name, value):
-        _list.append({"name":name,"value":value,"paid":False})
+        id = str(uuid.uuid4())[:3]
+        _list.append({"id":id,"name":name,"value":value,"paid":False})
         print("Expence sucessfully added\n")
 
     def show_expences(_list):
@@ -38,8 +41,9 @@ class expences:
 
 class income:
     def add_income(_list, name, value, total_income):
+        id = str(uuid.uuid4())[:3]
         total_income += value
-        _list.append({"name":name,"value":value})
+        _list.append({"id":id,"name":name,"value":value})
         print("Income sucessfully added\n")
 
     def show_incomes(_list, total_income):
