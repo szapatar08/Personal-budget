@@ -12,7 +12,7 @@ class val:
                 return True, i
         return False, "We didn't find a value with that value\n"
     
-class budget:
+class expences:
     def add_expence(_list, name, value):
         _list.append({"name":name,"value":value,"paid":False})
         print("Expence sucessfully added\n")
@@ -30,11 +30,31 @@ class budget:
 
     def change_status(_list, i):
         _list[i]["paid"] = True
-        print("Status changed\n")
+        print("Status sucessfully changed\n")
 
     def remove_expence(_list, i):
         _list.pop(i)
-        print("Sucessfully deleted")
+        print("Expence sucessfully deleted")
+
+class income:
+    def add_income(_list, name, value, total_income):
+        total_income += value
+        _list.append({"name":name,"value":value})
+        print("Income sucessfully added\n")
+
+    def show_incomes(_list, total_income):
+        print("-------------------------------------Incomes-------------------------------------")
+        for i in range(len(_list)):
+            print(f"Name: {_list[i]["name"]} | Value: {_list[i]["value"]}")
+        print(f"total_income\n")
+
+    def change_value(_list, i, new_value):
+        _list[i]["value"] = new_value
+        print("Income sucessfully changed\n")
+
+    def remove_income(_list, i):
+        _list.pop(i)
+        print("Income sucessfully deleted\bn")
 
 class csv_implementation:
     def read(_list,file):
